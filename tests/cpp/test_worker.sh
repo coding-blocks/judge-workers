@@ -9,6 +9,7 @@ mkdir -p $RUNBOX
 
 # Copy source to runbox
 cp $DIR/source.cpp $RUNBOX/source.cpp
+cp $DIR/run.stdin $RUNBOX/run.stdin
 
 # Test Compile
 docker run \

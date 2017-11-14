@@ -1,6 +1,8 @@
-#include <stdio.h>
+#include <iostream>
 using namespace std;
 int main () {
-    cout<<"Hello World!"
+    char in[10];
+    cin>>in;
+    cout<<"Hello "<<in;
     return 0;
 }

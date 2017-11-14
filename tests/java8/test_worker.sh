@@ -9,6 +9,7 @@ mkdir -p $RUNBOX
 
 # Copy source to runbox
 cp $DIR/Main.java $RUNBOX/Main.java
+cp $DIR/run.stdin $RUNBOX/run.stdin
 
 # Test Compile
 docker run \
@@ -19,7 +20,7 @@ docker run \
     --read-only \
     -v "$RUNBOX":/usr/src/runbox \
     -w /usr/src/runbox codingblocks/judge-worker-java8 \
-    /bin/compile.sh
+    bash -c "/bin/compile.sh && /bin/run.sh"
 
 # Delete runbox
 #rm -rf $RUNBOX
