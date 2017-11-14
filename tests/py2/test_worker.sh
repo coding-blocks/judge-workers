@@ -8,7 +8,7 @@ echo $RUNBOX
 mkdir -p $RUNBOX
 
 # Copy source to runbox
-cp $DIR/source.c $RUNBOX/source.c
+cp $DIR/script.py $RUNBOX/script.py
 
 # Test Compile
 docker run \
@@ -18,8 +18,8 @@ docker run \
     --rm \
     --read-only \
     -v "$RUNBOX":/usr/src/runbox \
-    -w /usr/src/runbox codingblocks/judge-worker-c \
-    bash -c "/bin/compile.sh && /bin/run.sh"
+    -w /usr/src/runbox codingblocks/judge-worker-py2 \
+    bash -c "/bin/run.sh"
 
 
 # Delete runbox

@@ -19,7 +19,7 @@ docker run \
     --read-only \
     -v "$RUNBOX":/usr/src/runbox \
     -w /usr/src/runbox codingblocks/judge-worker-cpp \
-    /bin/compile.sh
+    bash -c "/bin/compile.sh && /bin/run.sh"
 
 # Delete runbox
 #rm -rf $RUNBOX
