@@ -8,7 +8,7 @@ echo $RUNBOX
 mkdir -p $RUNBOX
 
 # Copy source to runbox
-cp $DIR/source.c $RUNBOX/source.c
+cp $DIR/source.cpp $RUNBOX/source.cpp
 
 # Test Compile
 docker run \
@@ -18,7 +18,7 @@ docker run \
     --rm \
     --read-only \
     -v "$RUNBOX":/usr/src/runbox \
-    -w /usr/src/runbox codingblocks/judge-worker-c \
+    -w /usr/src/runbox codingblocks/judge-worker-cpp \
     /bin/compile.sh
 
 # Delete runbox
