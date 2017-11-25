@@ -1,1 +1,2 @@
-print "Hello World!"
+inp = raw_input()
+print("Hello " + inp)
