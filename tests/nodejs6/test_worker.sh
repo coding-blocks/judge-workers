@@ -4,11 +4,15 @@ DIR=$(pwd)
 RUNBOX="${DIR}/runbox"
 
 echo $RUNBOX
+# Remove RUNBOX
+rm -rf $RUNBOX
+
 # Create runbox
 mkdir -p $RUNBOX
 
 # Copy source to runbox
 cp $DIR/script.js $RUNBOX/script.js
+cp $DIR/run.stdin $RUNBOX/run.stdin
 
 # Test Compile
 docker run \
@@ -19,7 +23,7 @@ docker run \
     --read-only \
     -v "$RUNBOX":/usr/src/runbox \
     -w /usr/src/runbox codingblocks/judge-worker-nodejs6 \
-    bash -c "/bin/run.sh"
+    bash -c "/bin/compile.sh && /bin/run.sh"
 
 
 # Delete runbox

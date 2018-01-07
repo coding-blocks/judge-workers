@@ -4,6 +4,9 @@ DIR=$(pwd)
 RUNBOX="${DIR}/runbox"
 
 echo $RUNBOX
+# Remove RUNBOX
+rm -rf $RUNBOX
+
 # Create runbox
 mkdir -p $RUNBOX
 
