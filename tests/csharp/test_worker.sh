@@ -8,7 +8,7 @@ echo $RUNBOX
 mkdir -p $RUNBOX
 
 # Copy source to runbox
-cp $DIR/Program.cs $RUNBOX/Program.cs
+cp $DIR/program.cs $RUNBOX/program.cs
 cp $DIR/run.stdin $RUNBOX/run.stdin
 
 # Test Compile
