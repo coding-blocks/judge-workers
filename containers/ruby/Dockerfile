@@ -1,6 +1,6 @@
 FROM alpine:3.6
 
-RUN apk add --no-cache ruby bash
+RUN apk add --no-cache ruby=2.5.1 bash
 
 COPY ./compile.sh /bin/compile.sh
 COPY ./run.sh /bin/run.sh
