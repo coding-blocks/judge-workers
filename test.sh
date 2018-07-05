@@ -1,4 +1,4 @@
-#!bats/bin/bats
+#!/usr/bin/env bats
 
 @test "test c" {
   sh tests/c/test_worker.sh

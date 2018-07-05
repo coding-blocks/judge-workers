@@ -5,6 +5,7 @@ services:
 
 install:
   - "bash build_workers.sh"
+  - "PATH=./bats/bin:$PATH"
 
 script:
   - "bash test.sh"
