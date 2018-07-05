@@ -1,0 +1,10 @@
+language: bash
+sudo: required
+services:
+  - docker
+
+install:
+  - "bash build_workers.sh"
+
+script:
+  - "bash test.sh"
