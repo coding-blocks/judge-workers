@@ -24,4 +24,4 @@ docker run \
 
 
 # Delete runbox
-#rm -rf $RUNBOX
+rm -rf $RUNBOX

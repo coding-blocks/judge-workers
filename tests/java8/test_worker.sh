@@ -23,4 +23,4 @@ docker run \
     bash -c "/bin/compile.sh && /bin/run.sh"
 
 # Delete runbox
-#rm -rf $RUNBOX
+rm -rf $RUNBOX
