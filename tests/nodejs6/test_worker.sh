@@ -32,7 +32,7 @@ actual="$(cat ${RUNBOX}/run.stdout)"
 if [ "$expected" == "$actual" ] ;then
     :
 else
-    echo "MISMATCH: Expected = $expected; Actual = $expected"
+    echo "MISMATCH: Expected = $expected; Actual = $actual"
     exit 1
 fi
 
