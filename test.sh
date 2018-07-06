@@ -28,3 +28,7 @@
   sh tests/py3/test_worker.sh
 }
 
+@test "test kotlin" {
+  sh tests/kotlin/test_worker.sh
+}
+
