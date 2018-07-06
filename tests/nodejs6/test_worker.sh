@@ -25,6 +25,14 @@ docker run \
     -w /usr/src/runbox codingblocks/judge-worker-nodejs6 \
     bash -c "/bin/compile.sh && /bin/run.sh"
 
+expected="Hello World"
+actual="$(cat ${RUNBOX}/run.stdout)"
+if [ "$expected" == "$actual" ] ;then
+    :
+else
+    echo "MISMATCH: Expected = $expected; Actual = $expected"
+    exit 1
+fi
 
 # Delete runbox
 rm -rf $RUNBOX
