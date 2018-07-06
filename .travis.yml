@@ -4,8 +4,8 @@ services:
   - docker
 
 install:
-  - "bash build_workers.sh"
+  - "sh build_workers.sh"
   - "PATH=./bats/bin:$PATH"
 
 script:
-  - "bash test.sh"
+  - "sh test.sh"
