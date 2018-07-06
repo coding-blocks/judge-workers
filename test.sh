@@ -28,3 +28,7 @@
   sh tests/py3/test_worker.sh
 }
 
+@test "test ruby" {
+  sh tests/ruby/test_worker.sh
+}
+
