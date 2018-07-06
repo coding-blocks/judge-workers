@@ -4,25 +4,22 @@ DIR=$(pwd)
 RUNBOX="${DIR}/runbox"
 
 echo $RUNBOX
-# Remove RUNBOX
-rm -rf $RUNBOX
-
 # Create runbox
 mkdir -p $RUNBOX
 
 # Copy source to runbox
-cp $DIR/script.rb $RUNBOX/script.rb
+cp $DIR/program.cs $RUNBOX/program.cs
 cp $DIR/run.stdin $RUNBOX/run.stdin
 
 # Test Compile
 docker run \
-    --cpus="0.5" \
-    --memory="30m" \
+    --cpus="1" \
+    --memory="100m" \
     --ulimit nofile=64:64 \
     --rm \
     --read-only \
     -v "$RUNBOX":/usr/src/runbox \
-    -w /usr/src/runbox codingblocks/judge-worker-ruby \
+    -w /usr/src/runbox codingblocks/judge-worker-csharp \
     bash -c "/bin/compile.sh && /bin/run.sh"
 
 ls -lh ${RUNBOX}
