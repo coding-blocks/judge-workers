@@ -29,6 +29,6 @@
 }
 
 @test "test kotlin" {
-  sh tests/kotlin/test_worker.sh
+  bash tests/kotlin/test_worker.sh
 }
 
