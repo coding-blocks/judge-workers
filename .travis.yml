@@ -1,5 +1,8 @@
 language: generic
 sudo: required
+env:
+  global:
+    - PATH=${TRAVIS_BUILD_DIR/bats/bin}:${PATH}
 addons:
   apt:
     packages:
@@ -8,7 +11,7 @@ services:
   - docker
 
 install:
-  - "bash ./build_workers.sh"
+  - "./build_workers.sh"
 
 script:
-  - "bash ./bats/bin/bats test.sh"
+  - "test.sh"
