@@ -36,3 +36,7 @@
   bash tests/ruby/test_worker.sh
 }
 
+@test "test kotlin" {
+  bash tests/kotlin/test_worker.sh
+}
+
