@@ -11,5 +11,4 @@ install:
   - "bash ./build_workers.sh"
 
 script:
-  - "PATH='./bats/bin:${PATH}'"
   - "bash ./bats/bin/bats test.sh"
