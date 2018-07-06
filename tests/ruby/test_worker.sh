@@ -11,30 +11,20 @@ rm -rf $RUNBOX
 mkdir -p $RUNBOX
 
 # Copy source to runbox
-cp -fv $DIR/script.js $RUNBOX/script.js
-cp -fv $DIR/run.stdin $RUNBOX/run.stdin
+cp $DIR/script.rb $RUNBOX/script.rb
+cp $DIR/run.stdin $RUNBOX/run.stdin
 
 # Test Compile
 docker run \
     --cpus="0.5" \
-    --memory="20m" \
+    --memory="30m" \
     --ulimit nofile=64:64 \
     --rm \
     --read-only \
     -v "$RUNBOX":/usr/src/runbox \
-    -w /usr/src/runbox codingblocks/judge-worker-nodejs6 \
+    -w /usr/src/runbox codingblocks/judge-worker-ruby \
     bash -c "/bin/compile.sh && /bin/run.sh"
 
-ls -lh ${RUNBOX}
-
-expected="Hello World"
-actual="$(cat ${RUNBOX}/run.stdout)"
-if [ "$expected" == "$actual" ] ;then
-    :
-else
-    echo "MISMATCH: Expected = $expected; Actual = $actual"
-    exit 1
-fi
 
 # Delete runbox
 rm -rf $RUNBOX

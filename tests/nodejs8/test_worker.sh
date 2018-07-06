@@ -11,8 +11,8 @@ rm -rf $RUNBOX
 mkdir -p $RUNBOX
 
 # Copy source to runbox
-cp $DIR/script.js $RUNBOX/script.js
-cp $DIR/run.stdin $RUNBOX/run.stdin
+cp -fv $DIR/script.js $RUNBOX/script.js
+cp -fv $DIR/run.stdin $RUNBOX/run.stdin
 
 # Test Compile
 docker run \
@@ -26,5 +26,16 @@ docker run \
     bash -c "/bin/compile.sh && /bin/run.sh"
 
 
+ls -lh ${RUNBOX}
+
+expected="Hello World"
+actual="$(cat ${RUNBOX}/run.stdout)"
+if [ "$expected" == "$actual" ] ;then
+    :
+else
+    echo "MISMATCH: Expected = $expected; Actual = $actual"
+    exit 1
+fi
+
 # Delete runbox
-#rm -rf $RUNBOX
+rm -rf $RUNBOX

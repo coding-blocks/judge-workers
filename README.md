@@ -2,6 +2,8 @@
 
 This is one of the component of Coding Blocke Online Code Judge v2
 
+[![Build Status](https://travis-ci.org/coding-blocks/judge-workers.svg?branch=master)](https://travis-ci.org/coding-blocks/judge-workers)
+
 ## Workers
 
 Workers are docker containers that run the code. They have simple requirements
@@ -24,4 +26,6 @@ Currently we have following images -
  - [nodejs6](containers/nodejs6)
  - [nodejs](containers/nodejs8)
  - [py2](containers/py2)
+ - [py3](containers/py3)
+ - [ruby](containers/ruby)
  

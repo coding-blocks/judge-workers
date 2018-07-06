@@ -8,13 +8,13 @@ echo $RUNBOX
 mkdir -p $RUNBOX
 
 # Copy source to runbox
-cp $DIR/source.cpp $RUNBOX/source.cpp
-cp $DIR/run.stdin $RUNBOX/run.stdin
+cp -fv $DIR/source.cpp $RUNBOX/source.cpp
+cp -fv $DIR/run.stdin $RUNBOX/run.stdin
 
 # Test Compile
 docker run \
     --cpus="0.5" \
-    --memory="20m" \
+    --memory="30m" \
     --ulimit nofile=64:64 \
     --rm \
     --read-only \
@@ -22,5 +22,16 @@ docker run \
     -w /usr/src/runbox codingblocks/judge-worker-cpp \
     bash -c "/bin/compile.sh && /bin/run.sh"
 
+ls -lh ${RUNBOX}
+
+expected="Hello World"
+actual="$(cat ${RUNBOX}/run.stdout)"
+if [ "$expected" == "$actual" ] ;then
+    :
+else
+    echo "MISMATCH: Expected = $expected; Actual = $actual"
+    exit 1
+fi
+
 # Delete runbox
-#rm -rf $RUNBOX
+rm -rf $RUNBOX
