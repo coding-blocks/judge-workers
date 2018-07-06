@@ -36,3 +36,7 @@
   bash tests/ruby/test_worker.sh
 }
 
+@test "test swift" {
+bash tests/swift/test_worker.sh
+}
+
