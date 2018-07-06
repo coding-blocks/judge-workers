@@ -11,8 +11,8 @@ rm -rf $RUNBOX
 mkdir -p $RUNBOX
 
 # Copy source to runbox
-cp $DIR/script.py $RUNBOX/script.py
-cp $DIR/run.stdin $RUNBOX/run.stdin
+cp -fv $DIR/script.py $RUNBOX/script.py
+cp -fv $DIR/run.stdin $RUNBOX/run.stdin
 
 # Test Compile
 docker run \

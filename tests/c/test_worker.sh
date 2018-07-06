@@ -8,8 +8,8 @@ echo $RUNBOX
 mkdir -p $RUNBOX
 
 # Copy source to runbox
-cp $DIR/source.c $RUNBOX/source.c
-cp $DIR/run.stdin $RUNBOX/run.stdin
+cp -fv $DIR/source.c $RUNBOX/source.c
+cp -fv $DIR/run.stdin $RUNBOX/run.stdin
 
 # Test Compile
 docker run \
