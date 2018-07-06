@@ -29,6 +29,6 @@
 }
 
 @test "test ruby" {
-  sh tests/ruby/test_worker.sh
+  bash tests/ruby/test_worker.sh
 }
 
