@@ -1,10 +1,14 @@
-language: bash
+language: generic
 sudo: required
+addons:
+  apt:
+    packages:
+      - bash
 services:
   - docker
 
 install:
-  - "./build_workers.sh"
+  - "bash ./build_workers.sh"
 
 script:
-  - "./bats/bin/bats test.sh"
+  - "bash ./bats/bin/bats test.sh"
