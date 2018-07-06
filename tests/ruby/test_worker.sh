@@ -25,6 +25,16 @@ docker run \
     -w /usr/src/runbox codingblocks/judge-worker-ruby \
     bash -c "/bin/compile.sh && /bin/run.sh"
 
+ls -lh ${RUNBOX}
+
+expected="Hello World"
+actual="$(cat ${RUNBOX}/run.stdout)"
+if [ "$expected" == "$actual" ] ;then
+    :
+else
+    echo "MISMATCH: Expected = $expected; Actual = $actual"
+    exit 1
+fi
 
 # Delete runbox
 rm -rf $RUNBOX
