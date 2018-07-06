@@ -25,6 +25,8 @@ docker run \
     -w /usr/src/runbox codingblocks/judge-worker-py2 \
     bash -c "/bin/compile.sh && /bin/run.sh"
 
+ls -lh ${RUNBOX}
+
 expected="Hello World"
 actual="$(cat ${RUNBOX}/run.stdout)"
 if [ "$expected" == "$actual" ] ;then
