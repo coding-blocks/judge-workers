@@ -11,7 +11,7 @@ rm -rf $RUNBOX
 mkdir -p $RUNBOX
 
 # Copy source to runbox
-cp $DIR/script.rb $RUNBOX/file.swift
+cp $DIR/file.swift $RUNBOX/file.swift
 cp $DIR/run.stdin $RUNBOX/run.stdin
 
 # Test Compile

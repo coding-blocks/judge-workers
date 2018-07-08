@@ -1,6 +1,6 @@
-FROM alpine:3.6
+FROM alpine:3.1
 
-RUN apk add --no-cache swift=4.0 bash
+RUN apk add --no-cache Swift=3.1.1 bash
 
 COPY ./compile.sh /bin/compile.sh
 COPY ./run.sh /bin/run.sh
