@@ -22,6 +22,7 @@ Currently we have following images -
  - [c](containers/c)
  - [cpp](containers/cpp)
  - [c#](containers/csharp)
+ - [golang](containers/golang)
  - [java8](containers/java8)
  - [nodejs6](containers/nodejs6)
  - [nodejs](containers/nodejs8)
