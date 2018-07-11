@@ -1,13 +1,10 @@
 package main
 
-import ("bufio"
-        "fmt"
-        "os"
-  )
+import ("fmt")
 
 func main() {
-  scanner := bufio.NewScanner(os.Stdin)
-  text, _ := scanner.Scan()
+  var text string
+  fmt.Scanf(&text)
   fmt.Println("Hello" + text)
-  
+
 }
