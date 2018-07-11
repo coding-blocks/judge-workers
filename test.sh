@@ -4,9 +4,9 @@
   bash tests/c/test_worker.sh
 }
 
-#@test "test cpp" {
-#  bash tests/cpp/test_worker.sh
-#}
+@test "test cpp" {
+  bash tests/cpp/test_worker.sh
+}
 
 @test "test csharp" {
   bash tests/csharp/test_worker.sh
@@ -36,3 +36,6 @@
   bash tests/ruby/test_worker.sh
 }
 
+@test "test swift" {
+  bash tests/swift/test_worker.sh
+}
