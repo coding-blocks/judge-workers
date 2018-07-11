@@ -16,12 +16,13 @@ cp -fv $DIR/run.stdin $RUNBOX/run.stdin
 
 # Test Compile
 docker run \
-    --cpus="0.5" \
-    --memory="10m" \
+    --cpus="1" \
+    --memory="20m" \
     --ulimit nofile=64:64 \
     --rm \
     --read-only \
     -v "$RUNBOX":/usr/src/runbox \
+    -v "$RUNBOX":/tmp \
     -w /usr/src/runbox codingblocks/judge-worker-golang \
     bash -c "/bin/compile.sh && /bin/run.sh"
 
