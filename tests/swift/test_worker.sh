@@ -35,4 +35,4 @@ exit 1
 fi
 
 # Delete runbox
-sudo rm -rf $RUNBOX
+rm -rf $RUNBOX
