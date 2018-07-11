@@ -11,18 +11,18 @@ rm -rf $RUNBOX
 mkdir -p $RUNBOX
 
 # Copy source to runbox
-cp $DIR/script.rb $RUNBOX/script.rb
-cp $DIR/run.stdin $RUNBOX/run.stdin
+cp -fv $DIR/main.go $RUNBOX/main.go
+cp -fv $DIR/run.stdin $RUNBOX/run.stdin
 
 # Test Compile
 docker run \
     --cpus="0.5" \
-    --memory="30m" \
+    --memory="10m" \
     --ulimit nofile=64:64 \
     --rm \
     --read-only \
     -v "$RUNBOX":/usr/src/runbox \
-    -w /usr/src/runbox codingblocks/judge-worker-ruby \
+    -w /usr/src/runbox codingblocks/judge-worker-golang \
     bash -c "/bin/compile.sh && /bin/run.sh"
 
 ls -lh ${RUNBOX}
