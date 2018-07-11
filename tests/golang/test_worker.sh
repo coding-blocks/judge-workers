@@ -4,20 +4,17 @@ DIR=$(pwd)
 RUNBOX="${DIR}/runbox"
 
 echo $RUNBOX
-# Remove RUNBOX
-rm -rf $RUNBOX
-
 # Create runbox
 mkdir -p $RUNBOX
 
 # Copy source to runbox
-cp -fv $DIR/main.go $RUNBOX/main.go
-cp -fv $DIR/run.stdin $RUNBOX/run.stdin
+cp $DIR/main.go $RUNBOX/main.go
+cp $DIR/run.stdin $RUNBOX/run.stdin
 
 # Test Compile
 docker run \
     --cpus="1" \
-    --memory="20m" \
+    --memory="100m" \
     --ulimit nofile=64:64 \
     --rm \
     --read-only \
