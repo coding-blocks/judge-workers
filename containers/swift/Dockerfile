@@ -1,6 +1,6 @@
 FROM ubuntu:16.04
 
-RUN apt-get swift-4.0.3-releasebash
+RUN apt-get install swift-4.0.3-release bash
 
 COPY ./compile.sh /bin/compile.sh
 COPY ./run.sh /bin/run.sh
