@@ -19,7 +19,6 @@ docker run \
     --rm \
     --read-only \
     -v "$RUNBOX":/usr/src/runbox \
-    -v "$RUNBOX":/tmp \
     -w /usr/src/runbox codingblocks/judge-worker-golang \
     bash -c "/bin/compile.sh && /bin/run.sh"
 
