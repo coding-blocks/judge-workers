@@ -23,6 +23,10 @@
 @test "test nodejs8" {
   bash tests/nodejs8/test_worker.sh
 }
+@test "test swift" {
+bash tests/swift/test_worker.sh
+}
+
 
 @test "test py2" {
   bash tests/py2/test_worker.sh
