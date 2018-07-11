@@ -4,7 +4,7 @@ import ("fmt")
 
 func main() {
   var text string
-  fmt.Scanf(&text)
+  fmt.Scanf("%s", &text)
   fmt.Println("Hello" + text)
 
 }
