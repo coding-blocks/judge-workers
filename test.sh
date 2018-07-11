@@ -19,6 +19,10 @@
 @test "test nodejs6" {
   bash tests/nodejs6/test_worker.sh
 }
+@test "test golang" {
+bash tests/golang/test_worker.sh
+}
+
 
 @test "test nodejs8" {
   bash tests/nodejs8/test_worker.sh
