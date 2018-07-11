@@ -20,7 +20,7 @@
   bash tests/nodejs6/test_worker.sh
 }
 @test "test golang" {
-bash tests/nodejs6/golang.sh
+bash tests/golang/test_worker.sh
 }
 
 
