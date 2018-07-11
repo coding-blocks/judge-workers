@@ -1,6 +1,4 @@
-FROM ubuntu:16.04
-
-RUN apt-get install swift-4.0.3-r0 bash
+FROM drewcrawford/swift:latest
 
 COPY ./compile.sh /bin/compile.sh
 COPY ./run.sh /bin/run.sh
