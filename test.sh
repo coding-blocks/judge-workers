@@ -13,7 +13,7 @@
 }
 
 @test "test golang" {
-  bash tests/csharp/test_worker.sh
+  bash tests/golang/test_worker.sh
 }
 
 @test "test java8" {
