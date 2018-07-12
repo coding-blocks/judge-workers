@@ -1,6 +1,6 @@
 FROM alpine:3.6
 
-RUN apk add --no-cache bash go="1.8.4-r0"
+RUN apk add --no-cache musl-dev bash go="1.8.4-r0"
 
 COPY ./compile.sh /bin/compile.sh
 COPY ./run.sh /bin/run.sh
