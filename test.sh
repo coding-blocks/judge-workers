@@ -4,9 +4,9 @@
   bash tests/c/test_worker.sh
 }
 
-#@test "test cpp" {
-#  bash tests/cpp/test_worker.sh
-#}
+@test "test cpp" {
+ bash tests/cpp/test_worker.sh
+}
 
 @test "test csharp" {
   bash tests/csharp/test_worker.sh
@@ -26,6 +26,10 @@
 
 @test "test nodejs8" {
   bash tests/nodejs8/test_worker.sh
+}
+
+@test "test php7" {
+  bash tests/php7/test_worker.sh
 }
 
 @test "test py2" {
