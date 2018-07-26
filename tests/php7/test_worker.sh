@@ -16,8 +16,8 @@ cp -fv $DIR/run.stdin $RUNBOX/run.stdin
 
 # Test Compile
 docker run \
-    --cpus="1" \
-    --memory="100m" \
+    --cpus="0.5" \
+    --memory="20m" \
     --ulimit nofile=64:64 \
     --rm \
     --read-only \
