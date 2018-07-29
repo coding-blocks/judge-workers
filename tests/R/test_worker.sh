@@ -11,7 +11,7 @@ rm -rf $RUNBOX
 mkdir -p $RUNBOX
 
 # Copy source to runbox
-cp -fv $DIR/script.r $RUNBOX/script.r
+cp -fv $DIR/script.R $RUNBOX/script.R
 cp -fv $DIR/run.stdin $RUNBOX/run.stdin
 
 # Test Compile
@@ -23,7 +23,7 @@ docker run \
     --read-only \
     -v "$RUNBOX":/usr/src/runbox \
     -v "$RUNBOX":/tmp \
-    -w /usr/src/runbox codingblocks/judge-worker-R \
+    -w /usr/src/runbox codingblocks/judge-worker-r \
     bash -c "/bin/compile.sh && /bin/run.sh"
 
 ls -lh ${RUNBOX}
