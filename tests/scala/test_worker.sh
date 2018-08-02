@@ -23,7 +23,7 @@ docker run \
     --read-only \
     -v "$RUNBOX":/usr/src/runbox \
     -v "$RUNBOX":/tmp \
-    -w /usr/src/runbox scala \
+    -w /usr/src/runbox codingblocks/judge-worker-scala \
     bash -c "/bin/compile.sh && /bin/run.sh"
 
 ls -lh ${RUNBOX}
