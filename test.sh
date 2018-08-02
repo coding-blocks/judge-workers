@@ -28,6 +28,10 @@
   bash tests/nodejs8/test_worker.sh
 }
 
+@test "test perl" {
+  bash tests/perl/test_worker.sh
+}
+
 @test "test py2" {
   bash tests/py2/test_worker.sh
 }
@@ -38,4 +42,8 @@
 
 @test "test ruby" {
   bash tests/ruby/test_worker.sh
+}
+
+@test "test rust" {
+  bash tests/rust/test_worker.sh
 }

@@ -26,6 +26,8 @@ Currently we have following images -
  - [java8](containers/java8)
  - [nodejs6](containers/nodejs6)
  - [nodejs](containers/nodejs8)
+ - [perl](containers/perl)
  - [py2](containers/py2)
  - [py3](containers/py3)
  - [ruby](containers/ruby)
+ - [rust](containers/rust)
