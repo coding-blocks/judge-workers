@@ -32,6 +32,10 @@
   bash tests/php7/test_worker.sh
 }
 
+# @test "test perl" {
+#   bash tests/perl/test_worker.sh
+# }
+
 @test "test py2" {
   bash tests/py2/test_worker.sh
 }
