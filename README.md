@@ -27,6 +27,7 @@ Currently we have following images -
  - [nodejs6](containers/nodejs6)
  - [nodejs](containers/nodejs8)
  - [perl](containers/perl)
+ - [php7](containers/php7)
  - [py2](containers/py2)
  - [py3](containers/py3)
  - [ruby](containers/ruby)
