@@ -43,3 +43,7 @@
 @test "test ruby" {
   bash tests/ruby/test_worker.sh
 }
+
+@test "test rust" {
+  bash tests/rust/test_worker.sh
+}
