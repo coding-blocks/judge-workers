@@ -28,5 +28,5 @@ Currently we have following images -
  - [nodejs](containers/nodejs8)
  - [py2](containers/py2)
  - [py3](containers/py3)
- - [R](containers/R)
+ - [R](containers/r)
  - [ruby](containers/ruby)

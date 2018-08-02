@@ -11,7 +11,7 @@ rm -rf $RUNBOX
 mkdir -p $RUNBOX
 
 # Copy source to runbox
-cp -fv $DIR/script.R $RUNBOX/script.R
+cp -fv $DIR/script.r $RUNBOX/script.r
 cp -fv $DIR/run.stdin $RUNBOX/run.stdin
 
 # Test Compile

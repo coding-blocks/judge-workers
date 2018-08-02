@@ -37,7 +37,7 @@
 }
 
 @test "test R" {
-  bash tests/R/test_worker.sh
+  bash tests/r/test_worker.sh
 }
 
 @test "test ruby" {
