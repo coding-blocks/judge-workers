@@ -4,9 +4,9 @@
   bash tests/c/test_worker.sh
 }
 
-#@test "test cpp" {
-#  bash tests/cpp/test_worker.sh
-#}
+@test "test cpp" {
+ bash tests/cpp/test_worker.sh
+}
 
 @test "test csharp" {
   bash tests/csharp/test_worker.sh
@@ -28,9 +28,9 @@
   bash tests/nodejs8/test_worker.sh
 }
 
-@test "test perl" {
-  bash tests/perl/test_worker.sh
-}
+# @test "test perl" {
+#   bash tests/perl/test_worker.sh
+# }
 
 @test "test py2" {
   bash tests/py2/test_worker.sh
@@ -38,6 +38,10 @@
 
 @test "test py3" {
   bash tests/py3/test_worker.sh
+}
+
+@test "test R" {
+  bash tests/r/test_worker.sh
 }
 
 @test "test ruby" {

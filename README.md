@@ -29,5 +29,6 @@ Currently we have following images -
  - [perl](containers/perl)
  - [py2](containers/py2)
  - [py3](containers/py3)
+ - [R](containers/r)
  - [ruby](containers/ruby)
  - [rust](containers/rust)
