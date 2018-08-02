@@ -1,12 +1,15 @@
 #!/usr/bin/env bats
+@test "test bash" {
+  bash tests/bash/test_worker.sh
+}
 
 @test "test c" {
   bash tests/c/test_worker.sh
 }
 
-#@test "test cpp" {
-#  bash tests/cpp/test_worker.sh
-#}
+@test "test cpp" {
+ bash tests/cpp/test_worker.sh
+}
 
 @test "test csharp" {
   bash tests/csharp/test_worker.sh

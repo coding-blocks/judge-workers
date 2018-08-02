@@ -19,6 +19,7 @@ All workers are built on top of [alpine linux](https://alpinelinux.org/) 3.6
 
 Currently we have following images -
 
+ - [bash](containers/bash)
  - [c](containers/c)
  - [cpp](containers/cpp)
  - [c#](containers/csharp)
