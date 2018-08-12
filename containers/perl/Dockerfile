@@ -1,6 +1,6 @@
 FROM alpine:3.6
 
-RUN apk add --no-cache perl="5.24.4-r0" bash
+RUN apk add --no-cache perl bash
 
 COPY ./compile.sh /bin/compile.sh
 COPY ./run.sh /bin/run.sh
