@@ -30,6 +30,7 @@ if [ "$expected" == "$actual" ] ;then
     :
 else
     echo "MISMATCH: Expected = $expected; Actual = $actual"
+    echo "$(cat ${RUNBOX}/*.stderr)"
     exit 1
 fi
 
