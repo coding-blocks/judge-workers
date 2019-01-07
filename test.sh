@@ -12,6 +12,10 @@
   bash tests/csharp/test_worker.sh
 }
 
+@test "test csv" {
+  bash tests/csv/test_worker.sh
+}
+
 @test "test golang" {
   bash tests/golang/test_worker.sh
 }
