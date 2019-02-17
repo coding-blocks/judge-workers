@@ -30,4 +30,5 @@ Currently we have following images -
  - [py2](containers/py2)
  - [py3](containers/py3)
  - [ruby](containers/ruby)
+ - [swift](containers/swift)
  - [rust](containers/rust)
