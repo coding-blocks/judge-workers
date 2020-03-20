@@ -1,53 +1,53 @@
-#!/usr/bin/env bats
+#!/usr/bin/env ./bats/bin/bats
 
 @test "test c" {
-  bash tests/c/test_worker.sh
+  bash tests/test_workers.sh c
 }
 
 @test "test cpp" {
-  bash tests/cpp/test_worker.sh
+  bash tests/test_workers.sh cpp
 }
 
 @test "test csharp" {
-  bash tests/csharp/test_worker.sh
+  bash tests/test_workers.sh csharp
 }
 
 @test "test csv" {
-  bash tests/csv/test_worker.sh
+  bash tests/test_workers.sh csv
 }
 
 @test "test golang" {
-  bash tests/golang/test_worker.sh
+  bash tests/test_workers.sh golang
 }
 
 @test "test java8" {
-  bash tests/java8/test_worker.sh
+  bash tests/test_workers.sh java8
 }
 
 @test "test nodejs6" {
-  bash tests/nodejs6/test_worker.sh
+  bash tests/test_workers.sh nodejs6
 }
 
 @test "test nodejs8" {
-  bash tests/nodejs8/test_worker.sh
+  bash tests/test_workers.sh nodejs8
 }
 
 @test "test perl" {
-  bash tests/perl/test_worker.sh
+  bash tests/test_workers.sh perl
 }
 
 @test "test py2" {
-  bash tests/py2/test_worker.sh
+  bash tests/test_workers.sh py2
 }
 
 @test "test py3" {
-  bash tests/py3/test_worker.sh
+  bash tests/test_workers.sh py3
 }
 
 @test "test ruby" {
-  bash tests/ruby/test_worker.sh
+  bash tests/test_workers.sh ruby
 }
 
 @test "test rust" {
-  bash tests/rust/test_worker.sh
+  bash tests/test_workers.sh rust
 }

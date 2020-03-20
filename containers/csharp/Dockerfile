@@ -1,3 +1,4 @@
+FROM codingblocks/judge-worker-base
 FROM mono:latest
 
 RUN mono --version

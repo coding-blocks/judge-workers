@@ -1,4 +1,4 @@
-FROM alpine:3.6
+FROM codingblocks/judge-worker-base
 
 RUN apk add --no-cache musl-dev bash rust="1.17.0-r2"
 

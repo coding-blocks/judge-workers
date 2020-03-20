@@ -1,4 +1,4 @@
-FROM alpine:3.6
+FROM codingblocks/judge-worker-base
 RUN apk update && apk add --no-cache python3 bash coreutils
 COPY ./compile.sh /bin/compile.sh
 COPY ./run.sh /bin/run.sh

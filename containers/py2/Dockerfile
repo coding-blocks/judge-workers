@@ -1,4 +1,4 @@
-FROM alpine:3.6
+FROM codingblocks/judge-worker-base
 
 RUN apk add --no-cache python2 bash
 COPY ./compile.sh /bin/compile.sh

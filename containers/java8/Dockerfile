@@ -1,4 +1,4 @@
-FROM alpine:3.6
+FROM codingblocks/judge-worker-base
 
 RUN apk add --no-cache openjdk8 bash
 ENV PATH="/usr/lib/jvm/java-1.8-openjdk/bin:${PATH}"

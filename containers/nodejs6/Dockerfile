@@ -1,4 +1,4 @@
-FROM alpine:3.6
+FROM codingblocks/judge-worker-base
 
 RUN apk add --no-cache nodejs=6.10.3-r1  bash
 COPY ./compile.sh /bin/compile.sh

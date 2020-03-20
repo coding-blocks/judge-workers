@@ -1,4 +1,4 @@
-FROM alpine:3.6
+FROM codingblocks/judge-worker-base
 
 RUN apk add --no-cache musl-dev bash go="1.8.4-r0"
 
