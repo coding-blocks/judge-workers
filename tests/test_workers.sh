@@ -20,7 +20,7 @@ docker run \
     --read-only \
     -v "$RUNBOX":/usr/src/runbox \
     -w /usr/src/runbox codingblocks/judge-worker-"$LANGUAGE" \
-    runguard -t 5 bash -c "/bin/compile.sh && /bin/run.sh"
+    /bin/judge.sh -t 5 
 
 ls -lh ${RUNBOX}
 
