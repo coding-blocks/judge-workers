@@ -24,12 +24,12 @@
   bash tests/test_workers.sh java8
 }
 
-@test "test nodejs6" {
-  bash tests/test_workers.sh nodejs6
-}
-
 @test "test nodejs8" {
   bash tests/test_workers.sh nodejs8
+}
+
+@test "test nodejs10" {
+  bash tests/test_workers.sh nodejs10
 }
 
 @test "test perl" {

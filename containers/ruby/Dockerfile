@@ -1,6 +1,6 @@
 FROM codingblocks/judge-worker-base
 
-RUN apk add --no-cache ruby="2.4.5-r0" bash
+RUN apk add --no-cache ruby bash
 
 COPY ./compile.sh /bin/compile.sh
 COPY ./run.sh /bin/run.sh
