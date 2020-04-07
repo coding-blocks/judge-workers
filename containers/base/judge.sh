@@ -14,6 +14,18 @@
 #   runguard.time
 # 
 
+time=5
+memory=1024
+while getopts ":t:m:" opt; do
+  case $opt in
+    t) time="$OPTARG"
+    ;;
+    m) memory="$OPTARG"
+    ;;
+    \?) echo "Invalid option -$OPTARG" >&2
+    ;;
+  esac
+done
 
 #######################################
 # Run compilation script
@@ -48,19 +60,6 @@ function runcode {
 }
 
 function main {
-  time=5
-  memory=1024
-  while getopts ":t:m:" opt; do
-    case $opt in
-      t) time="$OPTARG"
-      ;;
-      m) memory="$OPTARG"
-      ;;
-      \?) echo "Invalid option -$OPTARG" >&2
-      ;;
-    esac
-  done
-
   compilecode
 
   if [ -f "testcases" ]; then
