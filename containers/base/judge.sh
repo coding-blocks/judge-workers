@@ -44,7 +44,7 @@ function runcode {
     -t $time \
     -E $OUTPUT_DIR/runguard.code \
     -T $OUTPUT_DIR/runguard.time \
-    /bin/run.sh < $INPUT_FILE 2> $OUTPUT_DIR/run.stderr 1> $OUTPUT_DIR/stdout
+    /bin/run.sh < $INPUT_FILE 2> $OUTPUT_DIR/run.stderr 1> $OUTPUT_DIR/run.stdout
 }
 
 function main {

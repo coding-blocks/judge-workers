@@ -25,12 +25,12 @@ docker run \
 ls -lh ${RUNBOX}
 
 expected="Hello World"
-actual="$(cat ${RUNBOX}/stdout)"
+actual="$(cat ${RUNBOX}/run.stdout)"
 if [ "$expected" == "$actual" ] ;then
     :
 else
     echo "MISMATCH: Expected = $expected; Actual = $actual"
-    echo "$(cat ${RUNBOX}/stderr)"
+    echo "$(cat ${RUNBOX}/*.stderr)"
 fi
 
 # Delete runbox
