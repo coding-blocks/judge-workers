@@ -62,9 +62,9 @@ function runcode {
 function main {
   compilecode
 
-  if [ -f "testcases" ]; then
+  if [ -d "testcases" ]; then
     for testcase in testcases/*; do
-      runcode testcases/$testcase/stdin testcases/$testcases/
+      runcode $testcase/stdin $testcase/
     done
   else
     runcode run.stdin .

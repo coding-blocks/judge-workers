@@ -34,4 +34,4 @@ else
 fi
 
 # Delete runbox
-rm -rf $RUNBOX
+# rm -rf $RUNBOX

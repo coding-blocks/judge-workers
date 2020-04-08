@@ -1,2 +1,2 @@
-inp = input()
+inp = int(input())
 print("Hello " + inp)
