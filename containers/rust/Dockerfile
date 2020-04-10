@@ -1,6 +1,6 @@
 FROM codingblocks/judge-worker-base
 
-RUN apk add --no-cache musl-dev bash rust="1.17.0-r2"
+RUN apk add --no-cache musl-dev bash rust
 
 COPY ./compile.sh /bin/compile.sh
 COPY ./run.sh /bin/run.sh
