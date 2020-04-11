@@ -1,6 +1,6 @@
 FROM codingblocks/judge-worker-base
 
-RUN apk add --no-cache musl-dev bash go="1.8.4-r0"
+RUN apk add --no-cache musl-dev bash go
 
 COPY ./compile.sh /bin/compile.sh
 COPY ./run.sh /bin/run.sh
