@@ -12,10 +12,6 @@
   bash tests/test_workers.sh csharp
 }
 
-@test "test csv" {
-  bash tests/test_workers.sh csv
-}
-
 @test "test golang" {
   bash tests/test_workers.sh golang
 }

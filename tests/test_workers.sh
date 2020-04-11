@@ -17,7 +17,6 @@ docker run \
     --memory="100m" \
     --ulimit nofile=64:64 \
     --rm \
-    --read-only \
     -v "$RUNBOX":/usr/src/runbox \
     -w /usr/src/runbox codingblocks/judge-worker-"$LANGUAGE" \
     /bin/judge.sh -t 5 
@@ -31,7 +30,9 @@ if [ "$expected" == "$actual" ] ;then
 else
     echo "MISMATCH: Expected = $expected; Actual = $actual"
     echo "$(cat ${RUNBOX}/*.stderr)"
+    rm -rf $RUNBOX
+    exit 1
 fi
 
 # Delete runbox
-# rm -rf $RUNBOX
+rm -rf $RUNBOX
