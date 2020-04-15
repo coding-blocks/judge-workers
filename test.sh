@@ -16,6 +16,10 @@
   bash tests/test_workers.sh golang
 }
 
+@test "test java" {
+  bash tests/test_workers.sh java
+}
+
 @test "test java8" {
   bash tests/test_workers.sh java8
 }
