@@ -1,1 +1,0 @@
-containers/base/judge.sh

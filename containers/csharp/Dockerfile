@@ -1,12 +1,8 @@
-FROM mono:latest
+FROM codingblocks/judge-worker-base:latest
 
-RUN apt-get update
-RUN apt-get install -y gcc
+RUN echo "http://dl-4.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories
+RUN apk add --no-cache gcc mono=5.20.1.19-r1
 RUN mono --version
-
-COPY ./runguard /usr/src/runguard
-RUN gcc /usr/src/runguard/runguard.c -o /bin/runguard
-COPY ./judge.sh /bin/judge.sh
 
 COPY ./compile.sh /bin/compile.sh
 COPY ./run.sh /bin/run.sh
