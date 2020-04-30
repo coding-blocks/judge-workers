@@ -51,3 +51,7 @@
 @test "test judge worker rust" {
   bash tests/judge-worker/test_workers.sh rust
 }
+
+@test "test project worker nodejs" {
+  bash tests/project-worker/test_workers.sh nodejs
+}

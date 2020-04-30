@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node src/index.js",
+    "build": "return 0",
     "test": "mocha --exit test/*.spec.js"
   },
   "author": "",
