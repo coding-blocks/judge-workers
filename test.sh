@@ -51,3 +51,7 @@
 @test "test rust" {
   bash tests/test_workers.sh rust
 }
+
+@test "test kotlin" {
+  bash tests/test_workers.sh kotlin
+}
