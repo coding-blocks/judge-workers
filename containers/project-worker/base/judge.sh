@@ -37,8 +37,8 @@ function buildAndRun {
   /bin/build.sh 1> $currentDir/build.stdout 2> $currentDir/build.stderr
   runguard \
     -t $TIME \
-    -E result.code \
-    -T result.time \
+    -E $currentDir/result.code \
+    -T $currentDir/result.time \
     /bin/run.sh 1> $currentDir/run.stdout 2> $currentDir/run.stderr
 }
 
