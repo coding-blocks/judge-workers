@@ -2,8 +2,10 @@
 cd $(dirname "$0")
 DIR=$(cd -)
 
-for i in $(ls "$DIR/containers")
+for type in $(ls "$DIR/containers")
 do
-    # docker image rm codingblocks/judge-worker-$i
-    docker build -t codingblocks/judge-worker-$i $DIR/containers/$i
+    for lang in $(ls "$DIR/containers/$type")
+    do
+        docker build -t codingblocks/$type-$lang $DIR/containers/$type/$lang
+    done
 done

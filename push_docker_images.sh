@@ -2,9 +2,10 @@
 cd $(dirname "$0")
 DIR=$(cd -)
 
-for i in $(ls "$DIR/containers")
+for type in $(ls "$DIR/containers")
 do
-    cd $DIR/containers/$i
-    docker push codingblocks/judge-worker-$i
-    cd $DIR
+    for lang in $(ls "$DIR/containers/$type")
+    do
+        docker push codingblocks/$type-$lang $DIR/containers/$type/$lang
+    done
 done

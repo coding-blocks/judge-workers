@@ -1,55 +1,59 @@
 #!/usr/bin/env ./bats/bin/bats
 
-@test "test c" {
-  bash tests/test_workers.sh c
+@test "test judge worker c" {
+  bash tests/judge-worker/test_workers.sh c
 }
 
-@test "test cpp" {
-  bash tests/test_workers.sh cpp
+@test "test judge worker cpp" {
+  bash tests/judge-worker/test_workers.sh cpp
 }
 
-@test "test csharp" {
-  bash tests/test_workers.sh csharp
+@test "test judge worker csharp" {
+  bash tests/judge-worker/test_workers.sh csharp
 }
 
-@test "test golang" {
-  bash tests/test_workers.sh golang
+@test "test judge worker golang" {
+  bash tests/judge-worker/test_workers.sh golang
 }
 
-@test "test java" {
-  bash tests/test_workers.sh java
+@test "test judge worker java" {
+  bash tests/judge-worker/test_workers.sh java
 }
 
-@test "test java8" {
-  bash tests/test_workers.sh java8
+@test "test judge worker java8" {
+  bash tests/judge-worker/test_workers.sh java8
 }
 
-@test "test nodejs8" {
-  bash tests/test_workers.sh nodejs8
+@test "test judge worker nodejs8" {
+  bash tests/judge-worker/test_workers.sh nodejs8
 }
 
-@test "test nodejs10" {
-  bash tests/test_workers.sh nodejs10
+@test "test judge worker nodejs10" {
+  bash tests/judge-worker/test_workers.sh nodejs10
 }
 
-@test "test perl" {
-  bash tests/test_workers.sh perl
+@test "test judge worker perl" {
+  bash tests/judge-worker/test_workers.sh perl
 }
 
-@test "test py2" {
-  bash tests/test_workers.sh py2
+@test "test judge worker py2" {
+  bash tests/judge-worker/test_workers.sh py2
 }
 
-@test "test py3" {
-  bash tests/test_workers.sh py3
+@test "test judge worker py3" {
+  bash tests/judge-worker/test_workers.sh py3
 }
 
-@test "test ruby" {
-  bash tests/test_workers.sh ruby
+@test "test judge worker ruby" {
+  bash tests/judge-worker/test_workers.sh ruby
 }
 
-@test "test rust" {
-  bash tests/test_workers.sh rust
+@test "test judge worker rust" {
+  bash tests/judge-worker/test_workers.sh rust
+}
+
+@test "test project worker nodejs" {
+  bash tests/project-worker/test_workers.sh nodejs
 }
 
 @test "test kotlin" {
