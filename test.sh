@@ -24,12 +24,13 @@
   bash tests/judge-worker/test_workers.sh java8
 }
 
-@test "test judge worker nodejs8" {
-  bash tests/judge-worker/test_workers.sh nodejs8
-}
-
 @test "test judge worker nodejs10" {
   bash tests/judge-worker/test_workers.sh nodejs10
+}
+
+
+@test "test judge worker nodejs12" {
+  bash tests/judge-worker/test_workers.sh nodejs12
 }
 
 @test "test judge worker perl" {
