@@ -1,6 +1,6 @@
 # judge-workers
 
-This is one of the component of Coding Blocke Online Code Judge v2
+This is one of the components of Coding Blocks Online Code Judge v2
 
 [![Build Status](https://travis-ci.org/coding-blocks/judge-workers.svg?branch=master)](https://travis-ci.org/coding-blocks/judge-workers)
 
@@ -17,7 +17,7 @@ All workers are built on top of [alpine linux](https://alpinelinux.org/) 3.6
 
 ## Supported Languages
 
-Currently we have following images -
+Currently, we have following images -
 
  - [c](containers/c)
  - [cpp](containers/cpp)
