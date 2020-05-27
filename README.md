@@ -24,6 +24,7 @@ Currently, we have following images -
  - [c#](containers/csharp)
  - [golang](containers/golang)
  - [java8](containers/java8)
+ - [kotlin](containers/judge-worker/kotlin)
  - [nodejs6](containers/nodejs6)
  - [nodejs](containers/nodejs8)
  - [perl](containers/perl)
