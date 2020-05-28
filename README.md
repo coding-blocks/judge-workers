@@ -1,6 +1,6 @@
 # judge-workers
 
-This is one of the component of Coding Blocke Online Code Judge v2
+This is one of the components of Coding Blocks Online Code Judge v2
 
 [![Build Status](https://travis-ci.org/coding-blocks/judge-workers.svg?branch=master)](https://travis-ci.org/coding-blocks/judge-workers)
 
@@ -17,17 +17,18 @@ All workers are built on top of [alpine linux](https://alpinelinux.org/) 3.6
 
 ## Supported Languages
 
-Currently we have following images -
+Currently, we have following images -
 
- - [c](containers/c)
- - [cpp](containers/cpp)
- - [c#](containers/csharp)
- - [golang](containers/golang)
- - [java8](containers/java8)
- - [nodejs10](containers/nodejs10)
- - [nodejs12](containers/nodejs12)
- - [perl](containers/perl)
- - [py2](containers/py2)
- - [py3](containers/py3)
- - [ruby](containers/ruby)
- - [rust](containers/rust)
+ - [c](containers/judge-worker/c)
+ - [cpp](containers/judge-worker/cpp)
+ - [c#](containers/judge-worker/csharp)
+ - [golang](containers/judge-worker/golang)
+ - [java8](containers/judge-worker/java8)
+ - [kotlin](containers/judge-worker/kotlin)
+ - [nodejs6](containers/judge-worker/nodejs6)
+ - [nodejs](containers/judge-worker/nodejs8)
+ - [perl](containers/judge-worker/perl)
+ - [py2](containers/judge-worker/py2)
+ - [py3](containers/judge-worker/py3)
+ - [ruby](containers/judge-worker/ruby)
+ - [rust](containers/judge-worker/rust)
