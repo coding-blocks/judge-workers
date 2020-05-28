@@ -56,6 +56,6 @@
   bash tests/project-worker/test_workers.sh nodejs
 }
 
-@test "test kotlin" {
-  bash tests/test_workers.sh kotlin
+@test "test judge worker kotlin" {
+  bash tests/judge-worker/test_workers.sh kotlin
 }

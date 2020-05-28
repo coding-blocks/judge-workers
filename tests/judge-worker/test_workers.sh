@@ -14,7 +14,7 @@ cp $DIR/$LANGUAGE/* $RUNBOX/
 # Test Compile
 docker run \
     --cpus="1" \
-    --memory="100m" \
+    --memory="500m" \
     --ulimit nofile=64:64 \
     --rm \
     -v "$RUNBOX":/usr/src/runbox \
