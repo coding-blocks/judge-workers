@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-java Main
+java -jar Main.jar
