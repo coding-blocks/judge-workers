@@ -18,7 +18,7 @@ docker run \
     --rm \
     -v "$RUNBOX":/usr/src/runbox \
     -w /usr/src/runbox codingblocks/project-worker-"$LANGUAGE" \
-    /bin/judge.sh -s src/*
+    /bin/judge.py -l package.json yarn.lock test
 
 ls -lh ${RUNBOX}
 
