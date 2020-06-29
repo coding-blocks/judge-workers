@@ -4,37 +4,33 @@ import sys
 import os
 import subprocess
 import argparse
+import yaml
 
-def compareHash(path):
-  hash1 = subprocess.getoutput(f'git --git-dir=problem/.git log --pretty=format:\'%h\' -n 1 -- {path}')
-  hash2 = subprocess.getoutput(f'git --git-dir=solution/.git log --pretty=format:\'%h\' -n 1 -- {path}')
+def beforeInstall(rootDir, scripts):
+  for script in scripts:
+    subprocess.call(f'{script} 1> {rootDir}/setup.stdout 2> {rootDir}/setup.stderr', shell=True)
 
-  return hash1 == hash2
+def runTestcases(rootDir, scripts, timeout):
+  os.mkdir(f'{rootDir}/result')
+  for i, script in enumerate(scripts):
+    os.mkdir(f'{rootDir}/result/{i}')
+    subprocess.call(f' \
+      runguard \
+      -t {timeout} \
+      -E {rootDir}/result/{i}/run.code \
+      -T {rootDir}/result/{i}/run.time \
+      {script} 1> {rootDir}/result/{i}/run.stdout 2> {rootDir}/result/{i}/run.stderr \
+    ', shell=True)
 
-def buildAndRun(timeout):
-  currentDir = os.getcwd()
-  os.chdir('solution')
+def main(timeout):
+  rootDir = os.getcwd()
+  os.chdir('project')
 
-  subprocess.call('/bin/setup.sh')
-  subprocess.call(f'/bin/build.sh 1> {currentDir}/build.stdout 2> {currentDir}/build.stderr', shell=True)
-  subprocess.call([
-    f'runguard \
-    -t {timeout} \
-    -E {currentDir}/result.code \
-    -T {currentDir}/result.time \
-    /bin/run.sh 1> {currentDir}/run.stdout 2> {currentDir}/run.stderr'
-  ], shell=True)
-
-def main(timeout, locked):
-
-  # Compare hashes locked directories
-  for path in locked:
-    if not compareHash(path):
-      open('result.code', 'w').write('25')
-      open('result.stderr', 'w').write('Solution modified test directory')
-      sys.exit(1)
-
-  buildAndRun(timeout)
+  with open(f'{rootDir}/project.yml', 'r') as file:
+    config = yaml.full_load(file)
+  
+  beforeInstall(rootDir, config['project']['before-test'])
+  runTestcases(rootDir, config['project']['testcases'], timeout)
 
 if __name__ == '__main__':
   parser = argparse.ArgumentParser()
@@ -45,14 +41,7 @@ if __name__ == '__main__':
     help='Timeout for the Code Run', 
     default=20
   )
-  parser.add_argument(
-    '-l', 
-    '--locked-paths', 
-    nargs='+', 
-    help='List of paths whose hash is to be compared', 
-    required=True
-  )
 
   args = parser.parse_args()
-  timeout, locked = args.timeout, args.locked_paths
-  main(timeout, locked)
+  timeout = args.timeout
+  main(timeout)

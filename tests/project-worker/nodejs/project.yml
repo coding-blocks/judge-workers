@@ -1,0 +1,8 @@
+project:
+  allowed-folders:
+    - '*/src/**/*.js'
+  before-test:
+    - yarn install
+    - yarn build
+  testcases:
+    - yarn test
