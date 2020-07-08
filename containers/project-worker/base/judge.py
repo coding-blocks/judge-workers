@@ -8,7 +8,10 @@ import yaml
 
 def beforeInstall(rootDir, scripts):
   for script in scripts:
-    subprocess.call(f'{script} 1> {rootDir}/setup.stdout 2> {rootDir}/setup.stderr', shell=True)
+    return_code = subprocess.call(f'{script} 1> {rootDir}/setup.stdout 2> {rootDir}/setup.stderr', shell=True)
+    open(f'{rootDir}/setup.code', 'w').write(str(return_code))
+    if return_code:
+      sys.exit(return_code)
 
 def runTestcases(rootDir, scripts, timeout):
   os.mkdir(f'{rootDir}/result')
