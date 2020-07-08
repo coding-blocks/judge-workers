@@ -53,10 +53,14 @@
   bash tests/judge-worker/test_workers.sh rust
 }
 
+@test "test judge worker kotlin" {
+  bash tests/judge-worker/test_workers.sh kotlin
+}
+
 @test "test project worker nodejs" {
   bash tests/project-worker/test_workers.sh nodejs
 }
 
-@test "test judge worker kotlin" {
-  bash tests/judge-worker/test_workers.sh kotlin
+@test "test project worker python" {
+  bash tests/project-worker/test_workers.sh python
 }
