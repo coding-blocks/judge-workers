@@ -1,6 +1,6 @@
 project:
   allowed-folders:
-    - '*/src/**/*.js'
+    - src/
   before-test:
     - yarn install
     - yarn build

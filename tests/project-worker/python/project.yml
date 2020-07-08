@@ -1,0 +1,7 @@
+project:
+  allowed-folders:
+    - src/
+  before-test:
+    - pip install -r requirements.txt
+  testcases:
+    - python manage.py test tests/*

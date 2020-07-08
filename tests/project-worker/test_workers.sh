@@ -14,7 +14,7 @@ cp -r $DIR/$LANGUAGE/* $RUNBOX/
 # Test Compile
 docker run \
     --cpus="1" \
-    --memory="100m" \
+    --memory="500m" \
     --rm \
     -v "$RUNBOX":/usr/src/runbox \
     -w /usr/src/runbox codingblocks/project-worker-"$LANGUAGE" \
