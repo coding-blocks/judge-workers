@@ -60,7 +60,9 @@ function runcode {
 }
 
 function main {
-  compilecode
+  runguard \
+    -t 10 \
+    /bin/compile.sh || (echo "Compilation Error" > compile.stderr && exit 0)
 
   if [ -d "testcases" ]; then
     for testcase in testcases/*; do
