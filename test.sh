@@ -64,3 +64,7 @@
 @test "test project worker python" {
   bash tests/project-worker/test_workers.sh python
 }
+
+@test "test swift" {
+  bash tests/swift/test_worker.sh
+}
