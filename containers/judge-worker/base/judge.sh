@@ -18,9 +18,9 @@ time=5
 memory=1024
 while getopts ":t:m:" opt; do
   case $opt in
-    t) time="$OPTARG"
+    t) time=$OPTARG
     ;;
-    m) memory="$OPTARG"
+    m) memory=$OPTARG
     ;;
     \?) echo "Invalid option -$OPTARG" >&2
     ;;
@@ -48,6 +48,9 @@ function compilecode {
 function runcode {
   INPUT_FILE=$1
   OUTPUT_DIR=$2
+  TIME_LIMIT=$3
+
+  time=$TIME_LIMIT
 
   touch $OUTPUT_DIR/runguard.code
   touch $OUTPUT_DIR/runguard.time
@@ -66,7 +69,13 @@ function main {
 
   if [ -d "testcases" ]; then
     for testcase in testcases/*; do
-      runcode $testcase/stdin $testcase/
+      if [ -r "$testcase/timelimit" ]; then
+        timelimit=`cat $testcase/timelimit`
+      else
+        timelimit="5"
+      fi
+    
+      runcode $testcase/stdin $testcase/ $timelimit
     done
   else
     runcode run.stdin .
