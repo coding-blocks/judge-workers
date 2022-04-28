@@ -65,7 +65,7 @@ function runcode {
 function main {
   runguard \
     -t 10 \
-    /bin/compile.sh || (echo "Compilation Error" > compile.stderr && exit 0)
+    /bin/compile.sh 2> compile.stderr
 
   if [ -d "testcases" ]; then
     for testcase in testcases/*; do
@@ -78,7 +78,7 @@ function main {
       runcode $testcase/stdin $testcase/ $timelimit
     done
   else
-    runcode run.stdin .
+    runcode run.stdin . "5"
   fi
 }
 
