@@ -15,7 +15,7 @@
 # 
 
 time=5
-memory=1024
+memory=10485760
 while getopts ":t:m:" opt; do
   case $opt in
     t) time=$OPTARG
@@ -49,14 +49,20 @@ function runcode {
   INPUT_FILE=$1
   OUTPUT_DIR=$2
   TIME_LIMIT=$3
+  MEMORY_LIMIT=$4
 
   time=$TIME_LIMIT
+  memory=$MEMORY_LIMIT
 
   touch $OUTPUT_DIR/runguard.code
   touch $OUTPUT_DIR/runguard.time
+  touch $OUTPUT_DIR/runguard.out
+  touch $OUTPUT_DIR/debug
+  echo $memory > $OUTPUT_DIR/debug
 
   runguard \
     -t $time \
+    -m $memory \
     -E $OUTPUT_DIR/runguard.code \
     -T $OUTPUT_DIR/runguard.time \
     /bin/run.sh < $INPUT_FILE 2> $OUTPUT_DIR/run.stderr 1> $OUTPUT_DIR/run.stdout
@@ -74,11 +80,17 @@ function main {
       else
         timelimit="5"
       fi
+
+      if [ -r "$testcase/memorylimit" ]; then
+        memorylimit=`cat $testcase/memorylimit`
+      else
+        memorylimit=10485760
+      fi
     
-      runcode $testcase/stdin $testcase/ $timelimit
+      runcode $testcase/stdin $testcase/ $timelimit $memorylimit
     done
   else
-    runcode run.stdin . "5"
+    runcode run.stdin . "5" 10485760
   fi
 }
 
